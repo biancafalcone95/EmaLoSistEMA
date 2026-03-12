@@ -178,6 +178,7 @@ p { color: var(--gray-500); }
   font-weight: 700;
 }
 .main-nav .nav-cta:hover { background: var(--blue-dark); color: var(--white); }
+.main-nav a.active { color: var(--blue); font-weight: 700; }
 
 .burger {
   display: none;
@@ -722,4 +723,116 @@ p { color: var(--gray-500); }
   .value-grid { grid-template-columns: 1fr; }
   .hero-ctas { flex-direction: column; }
   .btn { justify-content: center; }
+}
+
+/* =============================================
+   MULTI-PAGE ADDITIONS
+   ============================================= */
+
+/* ---- Page Hero (inner pages) ---- */
+.page-hero {
+  background: linear-gradient(135deg, var(--blue-light) 0%, #f8faff 100%);
+  padding: 72px 0 56px;
+  border-bottom: 1px solid rgba(43,91,173,.08);
+}
+.page-hero h1 { margin-bottom: 12px; }
+.page-hero p { font-size: 1.1rem; max-width: 600px; }
+
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .85rem;
+  color: var(--gray-400);
+  margin-bottom: 16px;
+}
+.page-breadcrumb a { color: var(--blue); }
+.page-breadcrumb a:hover { text-decoration: underline; }
+.page-breadcrumb .sep { color: var(--gray-400); }
+
+/* ---- Section CTA (centered button below a section) ---- */
+.section-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+/* ---- CTA Strip ---- */
+.cta-strip {
+  background: var(--blue);
+  padding: 80px 0;
+  text-align: center;
+}
+.cta-strip h2 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.cta-strip p {
+  color: rgba(255,255,255,.75);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  font-size: 1.05rem;
+}
+.cta-strip .btn-primary {
+  background: var(--yellow);
+  color: var(--dark);
+  box-shadow: 0 4px 16px rgba(0,0,0,.20);
+}
+.cta-strip .btn-primary:hover {
+  background: var(--yellow-dark);
+  box-shadow: 0 6px 24px rgba(0,0,0,.30);
+  transform: translateY(-2px);
+}
+
+/* ---- Services page large cards ---- */
+.services-grid--large { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+.service-card--large { padding: 36px 32px; }
+.service-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: none;
+}
+.service-list li {
+  font-size: .9rem;
+  color: var(--gray-500);
+  padding-left: 18px;
+  position: relative;
+}
+.service-list li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+/* ---- Value props light variant (chi-siamo) ---- */
+.value-props--light {
+  background: var(--gray-100);
+  padding: 80px 0;
+}
+.value-props--light .section-header { margin-bottom: 48px; }
+
+/* ---- Portfolio teaser (home) ---- */
+.portfolio-teaser-section { background: var(--gray-100); padding: 80px 0; }
+
+/* ---- Portfolio page top spacing ---- */
+.portfolio-page { padding-top: 48px; }
+.portfolio-page .portfolio-filters { margin-bottom: 40px; }
+
+/* ---- About page spacing ---- */
+.about-page { padding: 80px 0; }
+
+/* ---- Contact page spacing ---- */
+.contact-page { padding: 80px 0; }
+
+/* ---- Services page spacing ---- */
+.services-page { padding: 80px 0; }
+
+/* ---- Responsive: page hero ---- */
+@media (max-width: 768px) {
+  .page-hero { padding: 56px 0 40px; }
+  .services-grid--large { grid-template-columns: 1fr; }
+  .cta-strip { padding: 56px 0; }
 }
