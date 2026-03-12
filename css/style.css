@@ -621,8 +621,8 @@ p { color: var(--gray-500); }
 .footer-links a:hover, .footer-contact a:hover { color: var(--yellow); }
 
 /* Logo header con immagine */
-.logo img { height: 44px; width: auto; object-fit: contain; border-radius: 6px; }
-.site-footer .logo img { filter: brightness(1); }
+.logo img { height: 72px; width: auto; object-fit: contain; }
+.site-footer .logo img { height: 90px; }
 
 /* Portfolio immagini reali */
 .portfolio-img {
