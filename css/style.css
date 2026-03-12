@@ -6,9 +6,18 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --yellow: #F5C518;
-  --yellow-dark: #D4A900;
-  --yellow-light: #FFF6CC;
+  /* Brand – Blu cobalto (tuta logo) */
+  --blue: #2B5BAD;
+  --blue-dark: #1A3E8A;
+  --blue-light: #E8EFF8;
+  --blue-mid: #3A6EC4;
+
+  /* Accento – Giallo ambra (fulmine logo) */
+  --yellow: #F5C118;
+  --yellow-dark: #C9A000;
+  --yellow-light: #FEF6D6;
+
+  /* Neutri */
   --dark: #0D0D0D;
   --dark-800: #1A1A1A;
   --dark-700: #2A2A2A;
@@ -17,12 +26,13 @@
   --gray-400: #9CA3AF;
   --gray-100: #F3F4F6;
   --white: #FFFFFF;
+
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
   --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-  --shadow-md: 0 4px 16px rgba(0,0,0,.08);
-  --shadow-lg: 0 10px 40px rgba(0,0,0,.12);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.10);
+  --shadow-lg: 0 10px 40px rgba(43,91,173,.18);
   --transition: 0.22s ease;
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --max-w: 1200px;
@@ -72,14 +82,14 @@ p { color: var(--gray-500); }
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 
 .btn-primary {
-  background: var(--yellow);
-  color: var(--dark);
-  box-shadow: 0 4px 14px rgba(245,197,24,.4);
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(43,91,173,.35);
 }
 .btn-primary:hover {
-  background: var(--yellow-dark);
+  background: var(--blue-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245,197,24,.5);
+  box-shadow: 0 6px 20px rgba(43,91,173,.5);
 }
 
 .btn-secondary {
@@ -102,7 +112,7 @@ p { color: var(--gray-500); }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .12em;
-  color: var(--yellow-dark);
+  color: var(--blue);
   margin-bottom: 8px;
 }
 .section-header {
@@ -156,13 +166,13 @@ p { color: var(--gray-500); }
 }
 .main-nav a:hover { color: var(--dark); }
 .main-nav .nav-cta {
-  background: var(--yellow);
-  color: var(--dark);
+  background: var(--blue);
+  color: var(--white);
   padding: 10px 20px;
   border-radius: var(--radius-sm);
   font-weight: 700;
 }
-.main-nav .nav-cta:hover { background: var(--yellow-dark); color: var(--dark); }
+.main-nav .nav-cta:hover { background: var(--blue-dark); color: var(--white); }
 
 .burger {
   display: none;
@@ -190,7 +200,7 @@ p { color: var(--gray-500); }
    ============================================= */
 .hero {
   padding: 88px 0 80px;
-  background: linear-gradient(135deg, #FFFDF0 0%, #FFFFFF 60%);
+  background: linear-gradient(135deg, #EBF0FA 0%, #FFFFFF 60%);
   overflow: hidden;
 }
 .hero-inner {
@@ -204,14 +214,14 @@ p { color: var(--gray-500); }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--yellow-light);
-  color: var(--yellow-dark);
+  background: var(--blue-light);
+  color: var(--blue-dark);
   font-size: .82rem;
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 20px;
-  border: 1px solid rgba(213,169,0,.2);
+  border: 1px solid rgba(43,91,173,.2);
 }
 
 .hero-text h1 {
@@ -237,8 +247,8 @@ p { color: var(--gray-500); }
   font-size: .88rem;
   color: var(--gray-500);
 }
-.hero-contact-bar a { color: var(--dark); font-weight: 600; }
-.hero-contact-bar a:hover { color: var(--yellow-dark); }
+.hero-contact-bar a { color: var(--blue); font-weight: 600; }
+.hero-contact-bar a:hover { color: var(--blue-dark); }
 .sep { color: var(--gray-400); }
 
 .hero-image {
@@ -320,7 +330,7 @@ p { color: var(--gray-500); }
 .service-icon-wrap {
   width: 56px;
   height: 56px;
-  background: var(--yellow-light);
+  background: var(--blue-light);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -330,7 +340,7 @@ p { color: var(--gray-500); }
 .service-icon-wrap svg {
   width: 28px;
   height: 28px;
-  stroke: var(--yellow-dark);
+  stroke: var(--blue);
 }
 .service-card h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.1rem; }
 .service-card p { font-size: .93rem; line-height: 1.55; }
@@ -367,7 +377,7 @@ p { color: var(--gray-500); }
   border-radius: var(--radius-md);
   padding: 16px 24px;
   text-align: center;
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(245,193,24,.45);
 }
 .about-badge strong { display: block; font-size: 2.4rem; font-weight: 800; line-height: 1; color: var(--dark); }
 .about-badge span { font-size: .8rem; font-weight: 600; color: var(--dark-600); }
@@ -426,8 +436,9 @@ p { color: var(--gray-500); }
   transition: background var(--transition), color var(--transition);
 }
 .filter-btn.active, .filter-btn:hover {
-  background: var(--dark);
+  background: var(--blue);
   color: var(--white);
+  border-color: var(--blue);
 }
 
 .portfolio-grid {
@@ -493,16 +504,16 @@ p { color: var(--gray-500); }
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: var(--yellow-light);
+  background: var(--blue-light);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.contact-icon svg { width: 20px; height: 20px; stroke: var(--yellow-dark); }
+.contact-icon svg { width: 20px; height: 20px; stroke: var(--blue); }
 .contact-list strong { display: block; font-size: .85rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 3px; }
 .contact-list a, .contact-list span { font-size: .97rem; color: var(--dark); font-weight: 500; line-height: 1.5; }
-.contact-list a:hover { color: var(--yellow-dark); }
+.contact-list a:hover { color: var(--blue); }
 
 /* Form */
 .contact-form-wrap {
@@ -538,8 +549,8 @@ p { color: var(--gray-500); }
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--yellow);
-  box-shadow: 0 0 0 3px rgba(245,197,24,.15);
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(43,91,173,.12);
 }
 .form-group input[type="file"] {
   cursor: pointer;
@@ -602,6 +613,29 @@ p { color: var(--gray-500); }
   line-height: 1.5;
 }
 .footer-links a:hover, .footer-contact a:hover { color: var(--yellow); }
+
+/* Logo header con immagine */
+.logo img { height: 44px; width: auto; object-fit: contain; border-radius: 6px; }
+.site-footer .logo img { filter: brightness(1); }
+
+/* Portfolio immagini reali */
+.portfolio-img {
+  aspect-ratio: 4/3;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hero/About foto profilo */
+.hero-photo, .about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+.hero-image-placeholder, .about-image-placeholder {
+  overflow: hidden;
+}
 
 .footer-bottom {
   border-top: 1px solid var(--dark-600);

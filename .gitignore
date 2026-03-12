@@ -6,3 +6,7 @@
 Thumbs.db
 node_modules/
 .claude/
+# Materiale sorgente (le immagini processate sono in images/)
+immagini/
+profilo.HEIC
+logo.jpeg
