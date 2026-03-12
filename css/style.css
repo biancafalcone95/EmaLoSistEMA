@@ -34,7 +34,8 @@
   --shadow-md: 0 4px 16px rgba(0,0,0,.10);
   --shadow-lg: 0 10px 40px rgba(43,91,173,.18);
   --transition: 0.22s ease;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --max-w: 1200px;
 }
 
@@ -46,6 +47,10 @@ body {
   background: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
 }
 
 a { color: inherit; text-decoration: none; }
