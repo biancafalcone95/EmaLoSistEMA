@@ -967,6 +967,20 @@ p { color: var(--gray-500); }
   flex-wrap: wrap;
 }
 
+/* ---- Google review (contatti) ---- */
+.google-review {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.google-review strong { display: block; font-size: 1rem; color: var(--dark); margin-bottom: 4px; }
+.google-review p { font-size: .9rem; color: var(--gray-500); line-height: 1.5; margin-bottom: 16px; }
+
 @media (max-width: 768px) {
   .audience-grid { grid-template-columns: 1fr; }
   .why-collab { padding: 64px 0; }
