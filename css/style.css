@@ -927,7 +927,7 @@ p { color: var(--gray-500); }
 .hero-reassurance {
   font-size: .85rem;
   color: var(--gray-500);
-  margin: -8px 0 22px;
+  margin: 0;
 }
 
 .audience { padding: 72px 0; background: var(--gray-100); }
