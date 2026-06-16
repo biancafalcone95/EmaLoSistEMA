@@ -296,8 +296,27 @@ p { color: var(--gray-500); }
   padding: 24px 16px;
 }
 .value-icon {
-  font-size: 2.4rem;
-  margin-bottom: 14px;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 18px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(245,193,24,.22);
+  transition: transform var(--transition), border-color var(--transition), background var(--transition);
+}
+.value-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke: var(--yellow);
+  fill: none;
+}
+.value-card:hover .value-icon {
+  transform: translateY(-3px);
+  border-color: var(--yellow);
+  background: rgba(245,193,24,.10);
 }
 .value-card h3 {
   color: var(--white);
@@ -813,6 +832,15 @@ p { color: var(--gray-500); }
   padding: 80px 0;
 }
 .value-props--light .section-header { margin-bottom: 48px; }
+.value-props--light .value-icon {
+  background: var(--blue-light);
+  border-color: rgba(43,91,173,.18);
+}
+.value-props--light .value-icon svg { stroke: var(--blue); }
+.value-props--light .value-card:hover .value-icon {
+  border-color: var(--blue);
+  background: #DDE8F6;
+}
 
 /* ---- Portfolio teaser (home) ---- */
 .portfolio-teaser-section { background: var(--gray-100); padding: 80px 0; }
@@ -840,71 +868,55 @@ p { color: var(--gray-500); }
 /* =============================================
    FAQ
    ============================================= */
-.faq-section {
-  max-width: 800px;
-  margin: 4rem auto;
-  padding: 0 1.5rem;
-}
+.faq { padding: 96px 0; }
+.faq-list { max-width: 760px; margin: 0 auto; }
 
-.faq-section .section-eyebrow {
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.85rem;
-  color: var(--blue);
-  margin-bottom: 0.5rem;
-}
-
-.faq-section h2 {
-  text-align: center;
-  margin-bottom: 2.5rem;
-}
-
-.faq-section details {
-  border: 1px solid #e5e7eb;
-  border-radius: 10px;
-  margin-bottom: 0.75rem;
-  background: #fff;
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.faq-item[open] {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(43,91,173,.18);
 }
 
-.faq-section details[open] {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.faq-section summary {
+.faq-item summary {
   list-style: none;
   cursor: pointer;
-  padding: 1.1rem 1.25rem;
+  padding: 20px 24px;
   font-weight: 600;
+  font-size: 1rem;
+  color: var(--dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 16px;
 }
-
-.faq-section summary::-webkit-details-marker {
-  display: none;
-}
-
-.faq-section summary::after {
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
   content: "+";
-  font-size: 1.5rem;
+  flex-shrink: 0;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 1;
-  transition: transform 0.2s ease;
   color: var(--blue);
+  transition: transform var(--transition);
 }
+.faq-item[open] summary::after { transform: rotate(45deg); }
 
-.faq-section details[open] summary::after {
-  transform: rotate(45deg);
-}
-
-.faq-section details p {
-  padding: 0 1.25rem 1.25rem;
+.faq-item p {
+  padding: 0 24px 22px;
   margin: 0;
-  color: #4b5563;
-  line-height: 1.6;
+  color: var(--gray-500);
+  font-size: .95rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .faq { padding: 64px 0; }
 }
