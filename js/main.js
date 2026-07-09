@@ -160,18 +160,34 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Build mailto link as fallback (no backend)
-      const servizio  = form.servizio.value;
-      const messaggio = form.messaggio.value.trim();
-      const subject   = encodeURIComponent(`Richiesta da ${nome} ${cognome} – Ema Lo Sistema`);
-      const body      = encodeURIComponent(
-        `Nome: ${nome} ${cognome}\nTelefono: ${telefono}\nEmail: ${email}\nServizio: ${servizio || 'Non specificato'}\n\n${messaggio}`
-      );
+      const submitBtn = form.querySelector('[type="submit"]');
 
-      window.location.href = `mailto:emanuele.tasso94@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoFallback = () => {
+        const servizio  = form.servizio.value;
+        const messaggio = form.messaggio.value.trim();
+        const subject   = encodeURIComponent(`Richiesta da ${nome} ${cognome} – Ema Lo Sistema`);
+        const body      = encodeURIComponent(
+          `Nome: ${nome} ${cognome}\nTelefono: ${telefono}\nEmail: ${email}\nServizio: ${servizio || 'Non specificato'}\n\n${messaggio}`
+        );
+        window.location.href = `mailto:info@emalosistema.it?subject=${subject}&body=${body}`;
+        showNotice('success', 'Apro il tuo programma di posta per completare l\'invio.');
+      };
 
-      showNotice('success', 'Grazie! Il tuo client email si aprirà con la richiesta precompilata.');
-      form.reset();
+      if (submitBtn) { submitBtn.disabled = true; }
+      showNotice('success', 'Invio in corso…');
+
+      fetch('invia.php', { method: 'POST', body: new FormData(form) })
+        .then(r => (r.ok ? r.json() : Promise.reject()))
+        .then(res => {
+          if (res && res.ok) {
+            showNotice('success', 'Grazie! La tua richiesta è stata inviata. Ti rispondo entro poche ore.');
+            form.reset();
+          } else {
+            return Promise.reject();
+          }
+        })
+        .catch(() => { mailtoFallback(); })
+        .finally(() => { if (submitBtn) { submitBtn.disabled = false; } });
     });
   }
 

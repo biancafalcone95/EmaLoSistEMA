@@ -111,7 +111,7 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form class="contact-form" id="contact-form" novalidate>
+        <form class="contact-form" id="contact-form" enctype="multipart/form-data" novalidate>
           <div class="form-row">
             <div class="form-group">
               <label for="nome">Nome *</label>
@@ -154,6 +154,7 @@
             <input type="file" id="allegato" name="allegato" accept=".pdf,.jpg,.jpeg,.png" />
             <span class="file-hint">PDF, JPG, PNG – max 5 MB</span>
           </div>
+          <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
           <button type="submit" class="btn btn-primary btn-full">
             Invia Richiesta
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
