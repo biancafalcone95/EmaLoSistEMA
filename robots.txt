@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /invia.php
+
+Sitemap: https://www.emalosistema.it/sitemap.xml
