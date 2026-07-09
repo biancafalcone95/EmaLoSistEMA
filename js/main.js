@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const telefono = form.telefono.value.trim();
       const email    = form.email.value.trim();
 
-      if (!nome || !cognome || !telefono || !email) {
+      if (!nome || !cognome || !email) {
         showNotice('error', 'Compila tutti i campi obbligatori (*).');
         return;
       }

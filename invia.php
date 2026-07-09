@@ -27,7 +27,7 @@ $email     = field('email');
 $servizio  = field('servizio');
 $messaggio = trim($_POST['messaggio'] ?? '');
 
-if ($nome === '' || $cognome === '' || $telefono === '' || $email === '') {
+if ($nome === '' || $cognome === '' || $email === '') {
   http_response_code(422);
   echo json_encode(['ok' => false, 'error' => 'Compila tutti i campi obbligatori.']);
   exit;
