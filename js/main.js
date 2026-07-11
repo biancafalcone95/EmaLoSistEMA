@@ -4,6 +4,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---- Pulsante WhatsApp flottante (tutte le pagine) ----
+  (function () {
+    const wa = document.createElement('a');
+    wa.className = 'wa-float';
+    wa.href = 'https://wa.me/393928623005?text=' + encodeURIComponent('Ciao, ho visto il sito di Ema Lo Sistema e vorrei alcune informazioni.');
+    wa.target = '_blank';
+    wa.rel = 'noopener';
+    wa.setAttribute('aria-label', 'Scrivici su WhatsApp');
+    wa.innerHTML = '<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M19.11 17.21c-.28-.14-1.65-.81-1.9-.9-.26-.09-.44-.14-.63.14-.19.28-.72.9-.88 1.08-.16.19-.32.21-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.63-1.52-.86-2.08-.23-.55-.46-.48-.63-.48h-.54c-.19 0-.49.07-.75.35-.26.28-.98.96-.98 2.34 0 1.38 1 2.71 1.14 2.9.14.19 1.97 3.01 4.78 4.22.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.11-.26-.18-.54-.32z"/><path d="M26.58 5.4A13.29 13.29 0 0 0 16.02 1C8.66 1 2.68 6.98 2.67 14.34c0 2.35.62 4.65 1.79 6.68L2.56 27.5l6.64-1.74a13.3 13.3 0 0 0 6.81 1.86h.01c7.35 0 13.33-5.98 13.34-13.34a13.26 13.26 0 0 0-3.78-8.88zM16.03 25.37a11.06 11.06 0 0 1-5.64-1.55l-.4-.24-4.19 1.1 1.12-4.08-.26-.42a11.03 11.03 0 0 1-1.69-5.88C4.95 8.21 9.9 3.26 16.03 3.26c2.95 0 5.72 1.15 7.81 3.24a10.98 10.98 0 0 1 3.23 7.81c-.01 6.13-4.96 11.06-11.04 11.06z"/></svg>';
+    document.body.appendChild(wa);
+  })();
+
   // ---- Mobile nav burger ----
   const burger = document.getElementById('burger');
   const nav = document.getElementById('main-nav');
